@@ -93,7 +93,7 @@
 }
 
 .addbutton{
-    background-color: #28a745;
+    background-color: #355cf9 ;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -105,7 +105,7 @@
     transition: background-color 0.3s ease-in-out;
 }
 .savebutton {
-    background-color: #28a745;
+    background-color: #355cf9 ;
     color: #fff;
     border: none;
     padding: 10px 25px;
@@ -122,7 +122,8 @@
 
 .addbutton:hover,
 .savebutton:hover {
-    background-color: #218838;
+    background-color: #1d48f6;
+    /* opacity: 0.8; */
 }
 
 .addbutton:active,
@@ -249,7 +250,7 @@
 }
 
 .entireadd{
-    margin-bottom: 3rem;
+    margin-bottom: 6rem;
     margin-top: 4rem;
     display: flex;
     flex-direction: row;

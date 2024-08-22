@@ -2,8 +2,8 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  margin-bottom: 3rem; 
-  margin-left: 1rem;	
+  margin-bottom: 6rem; 
+  margin-left: 2rem;	
 }
   
 .product {
