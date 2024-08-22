@@ -1,0 +1,262 @@
+/* .newcustomerpage{
+    scrollbar-width: none;
+} */
+
+.form {
+    
+    background-color: #fff;
+    max-width: 1000px;
+    margin: 50px auto;
+    margin-bottom: 2rem;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 10);
+    margin-top: 2rem;
+    background: rgb(145, 144, 144);
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.formGroup {
+    margin-bottom: 20px;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.formGroup:last-child {
+    margin-right: 0;
+}
+
+.formGroup label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+    font-size: 19px;
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="number"],
+.formGroup input[type="date"]{
+    width: 100%;
+    padding: 10px;
+    border: 1.5px solid #20201f;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f3f3;
+}
+
+.formGroup select{
+    width: 100%;
+    padding: 10px;
+    border: 1.5px solid #20201f;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f3f3;
+}
+
+.productGroup {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    /* gap: -5px; */
+}
+
+.productGroup input,select {
+    margin-right: 7px;
+    flex: 1;
+}
+
+.productTotal {
+    margin-right: 10px;
+}
+
+
+.deletebutton{
+    background: transparent;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    margin-right: -7px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.deletebutton:active{
+    transform: scale(0.95);
+}
+
+.addbutton{
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 17px;
+    border: 1.5px solid #20201f;
+    transition: background-color 0.3s ease-in-out;
+}
+.savebutton {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 19px;
+    border: 1.5px solid #20201f;
+    transition: background-color 0.3s ease-in-out;
+    margin-left: 40%;
+    margin-top: 0.5rem;
+}
+
+
+.addbutton:hover,
+.savebutton:hover {
+    background-color: #218838;
+}
+
+.addbutton:active,
+.savebutton:active{
+    transform: scale(0.95);
+}
+
+.form h1{
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modalContent {
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: -1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 1);
+    text-align: center;
+}
+
+.modalContent p{
+    margin-top: 1rem;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #e80303;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.productGroup .productNN{
+    width: 140px;
+}
+
+.productGroup .companyNN{
+    width: 140px;
+}
+.productGroup .catalogNN{
+    width: 140px;
+}
+
+
+.addsection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+.addsection h2{
+    font-size:35px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.addsection input{
+    height: 3rem;
+    border-radius: 10px;
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 20px;
+    /* width: 15rem; */
+}
+
+.addname{
+    width: 10rem;
+}
+
+.addsub{
+    width: 20rem;
+}
+
+.addsection button{
+    height: 3.1rem;
+    border-radius: 25px;
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 20px;
+    width: 9rem;
+    font-weight: bold;
+    background-color: rgb(248, 250, 116);
+    transition: 0.3s ease-in-out;
+}
+
+.addsection button:hover{
+    background-color: rgb(252, 255, 57);
+}
+
+.addsection button:active{
+    transform: scale(0.95);
+}
+
+.entireadd{
+    margin-bottom: 3rem;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 2rem;
+    border-radius: 10px;
+    width: 1450px;
+    /* margin-top: 2rem; */
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 10);
+}

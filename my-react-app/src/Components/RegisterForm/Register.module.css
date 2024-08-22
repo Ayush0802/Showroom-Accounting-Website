@@ -1,0 +1,129 @@
+
+.Registerbox{
+    width: 400px;
+    background: #eee9e9;
+    box-shadow: 0 0 15px  rgba(254,241,0,255);
+    border: 1px solid rgba(254,241,0,255);;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    margin-top: 20rem;
+    transition: transform 0.3s ease; 
+}
+
+.Registerbox:hover {
+    transform: scale(1.1); 
+}
+
+.Registerbox h1{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: rgba(254,241,0,255);
+    font-weight: 600;
+}
+
+
+.inputContainer {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.inputbox {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-radius: 25px;
+    width: 100%;
+    padding: 8px 8px 8px 40px; 
+    background: transparent;
+    outline: none;
+    border: 2px solid rgba(254, 241, 0, 255);
+    color: white;
+    font-size: 17px;
+}
+
+.icon {
+    position: absolute;
+    top: 52%;
+    left: 10px; 
+    transform: translateY(-50%);
+    pointer-events: none; 
+    color: rgba(254, 241, 0, 255); 
+}
+
+.inputbox::placeholder{
+    font-size: 17px;
+    color: white;
+    font-style:italic;
+    font-weight: 25;
+}
+
+
+.Registerbutton{
+
+    width: 80%;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+    font-size: 25px;
+    background: transparent;
+    color: rgba(254,241,0,255);
+    border: 2px solid rgba(254,241,0,255);
+    transition: 0.3s
+}
+
+.Registerbutton:hover{
+    background: rgba(254,241,0,255);
+    color: black;
+}
+
+.Registerbutton:active{
+    transform: scale(0.95);
+}
+
+.loginway{
+
+    display: flex; 
+    justify-content: space-between;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    font-size: 18px;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.loginway a{
+    text-decoration: none;
+    color:rgb(95, 194, 255);
+    font-weight: 600;
+}
+
+.loginway a:hover{
+    text-decoration: underline;
+}
+
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.popup button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}

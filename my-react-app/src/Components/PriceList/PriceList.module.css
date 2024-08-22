@@ -1,0 +1,476 @@
+.pricelistPage {
+    padding: 20px;
+    flex: 1;
+    height: 82.5vh;
+    overflow:auto;
+}
+
+.pricelistPage h1{
+    text-align: center;
+    margin-top: -0.5rem;
+    font-weight: bolder;
+    font-size: 50px;
+
+}
+.suggestions {
+    position: absolute;
+    border: 1px solid #ddd;
+    list-style-type: none;
+    padding: 0;
+    width: 25%;
+    max-height: 125px;
+    overflow-y: auto;
+    scrollbar-width:none;
+    background-color: white;
+    z-index: 1;
+    border-radius: 30px;
+    margin-top: 3.2rem;
+    /* margin-left: -8.4rem; */
+}
+
+.suggestions li {
+    padding: 8px 20px;
+    cursor: pointer;
+}
+
+.suggestions li:hover {
+    background-color: #f1f1f1;
+}
+
+/* .searchContainer {
+    
+} */
+
+.searchContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem  ;
+    /* margin-left: 8rem; */
+}
+
+.searchInput {
+    width: 25%;
+    padding: 8px 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    font-size: 20px;
+    /* margin-right: 1rem; */
+}
+
+
+.searchButton {
+    padding: 8px 30px;
+    border-radius: 30px;
+    border: none;
+    background-color: #000;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.searchButton:hover {
+    background-color: rgb(51, 50, 50);
+}
+
+.searchButton:active{
+    transform: scale(0.95);
+}
+
+.addbutton{
+    background-color: #1d48f6;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    font-weight: bolder;
+    font-size:25px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1.5px solid #20201f;
+    transition: background-color 0.3s ease-in-out;
+    margin-bottom: 1.5rem;
+}
+
+.addbutton:hover {
+    background-color: #355cf9   ;
+}
+
+.addbutton:active{
+    transform: scale(0.95);
+}
+.buttoncontainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10rem;
+    margin-top: 1rem;
+    align-items: center;
+}
+
+
+
+.modalC {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 1700px;
+    padding: 125px;
+    height: 800px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    overflow-y: auto; 
+    max-height: 100vh; 
+}
+
+.modalContentC {
+    background-color: transparent;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.expenseBlock {
+    background-color: #ededed;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    /* max-width: 550px; */
+    transition: 0.3s ease-in-out;
+}
+
+.expenseBlock h2{
+    text-align: center;
+    font-weight: bolder;
+    margin-bottom: 1rem;
+}
+
+.expenseBlock li{
+    font-size: 20px;
+}
+
+/* .expenseBlock:hover {
+    transform: scale(1.05);
+    z-index: 10;
+} */
+
+.catalogContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem  ;
+    /* width: 600px; */
+    /* margin-left: 8rem; */
+}
+
+.expenseSummary {
+    font-weight: bold;
+    font-size: 24px;
+    display:flex ;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.expenseSummary p{
+    margin-bottom: 0.1rem;
+}
+
+.modalContent {
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: -1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 1);
+    text-align: center;
+}
+
+.modalContent p{
+    margin-top: 1rem;
+}
+
+.editDelete {
+    display: flex;
+    flex-direction: row;
+    justify-content: center ;
+    gap: 2rem;
+    /* margin-left: 30px; */
+    /* margin-right: -5px; */
+    /* margin-top: -5px; */
+}
+
+.editBut,
+.deleteBut {
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #fff;
+    transition: background-color 0.3s ease;
+    /* margin-left: 35px; */
+}
+
+.deleteBut {
+    background-color: transparent;
+    /* margin-right: 8px; */
+    /* margin-top: -5px; */
+    
+}
+
+.editBut:hover,
+.deleteBut:hover {
+    opacity: 0.7;
+}
+
+.editBut:active,
+.deleteBut:active {
+    transform: scale(0.90);
+}
+
+.tablecss {
+    width: 500px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.tablecss th,
+.tablecss td {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    /* padding: auto; */
+    padding: 3px;
+    /* width: 100px; */
+    text-align: center;
+}
+
+.tablecss th {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    border: 2px solid white;
+}
+
+.tablecss tr{
+    background-color: #ffffff;
+    font-weight: bold;
+    /* max-width: 1000px; */
+    font-size: 20px;
+    text-wrap: wrap;
+    transition: 0.3s ease-in-out;
+}
+
+.tablecss tr:hover {
+    background-color: rgb(250, 250, 89);
+    transform: scale(1.005);
+    cursor: pointer;
+}
+
+
+.plusSymbol {
+    /* display: ; */
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: -52px;
+    margin-bottom: 1rem;
+    margin-left: 29rem;
+}
+.discountbox {
+    position: relative;
+    width: 100px;
+    height: 50px;
+    background-color: #ededed;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #080a13;
+    margin-left: 7.5rem;
+    margin-right: -6rem;
+    margin-top: 0.5rem;
+}
+
+.discountlabel {
+    position: absolute;
+    top: -15px; /* Adjust the position of the label */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ededed;
+    color: rgb(9, 6, 6);
+    padding: 2px 4px;
+    border-radius: 8px 8px 0 0;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.discountcontent {
+    margin-top: 3px;
+    font-size: 23px;
+}
+
+.popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.popup {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+    text-align: center;
+}
+
+.popup h2 {
+    margin-top: 0;
+    font-weight: bolder;
+    font-size: 35px;
+}
+
+.popup p{
+    font-size: large;
+}
+
+.popup button {
+    margin: 8px;
+    gap: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 7.5px;
+    cursor: pointer;
+    font-size: larger;
+}
+
+.popup button:hover {
+    background-color: #0056b3;
+}
+
+.popup button:active{
+    scale: 0.95;
+}
+
+
+/* Media Queries for Responsiveness */
+
+/* Small devices (phones, less than 600px) */
+@media (max-width: 600px) {
+    .pricelistPage h1 {
+      font-size: 30px;
+    }
+  
+    .suggestions {
+      width: 220px;
+    }
+  
+    .editDelete{
+      gap:1rem;
+    }
+  
+    .searchInput {
+      width: 180px;
+      font-size: 16px;
+    }
+  
+    .searchButton {
+      font-size: 16px;
+      padding: 8px 15px;
+    }
+  
+    .addbutton {
+      font-size: 20px;
+      padding: 6px 15px;
+    }
+  
+    .buttoncontainer {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+  
+    .expenseBlock h2 {
+      font-size: 24px;
+    }
+  
+    .expenseBlock{
+      width: 320px;
+      margin-left: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .expenseBlock li {
+      font-size: 16px;
+    }
+  
+    .catalogContainer {
+      flex-direction: column;
+      /* margin-left: 0;
+      margin-right: 0; */
+    }
+  
+    .modalContent {
+      /* margin-top: -2rem; */
+      width: 90%;
+    }
+  
+    .tablecss {
+      width: 100%;
+    }
+  
+    .tablecss th,
+    .tablecss td {
+      font-size: 16px;
+    }
+  
+    .plusSymbol {
+      /* display: ; */
+      cursor: pointer;
+      margin-top: -30px;
+      margin-left: 17rem;
+    }
+  
+    .discountbox{
+      margin-left: 1rem;
+      margin-right:-0.5rem;
+    }
+  }

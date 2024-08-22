@@ -1,0 +1,84 @@
+.showbox{
+    width: 27rem;
+    height: 10rem;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    background-color: rgb(250, 250, 89);
+    transition: 0.3s ease-in-out;
+}
+
+.walletcontainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.showbox h1{
+    font-weight:bold;
+}
+
+.balance{
+    font-weight:bolder;
+    color: rgb(250, 250, 89);
+    font-size: 60px;
+    text-shadow: 0 0 50px rgb(0, 0, 0);
+    transition: 0.3s ease-in-out;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.monthlyTotals:hover,
+.showbox:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.tablemonth{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 2.7rem;
+}
+
+.monthlyTable {
+    width: 1000px;
+    margin-top: 2rem;
+}
+
+.monthlyTable th,
+.monthlyTable td {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    padding: 8px;
+    text-align: center;
+}
+
+.monthlyTable th {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    border: 2px solid white;
+}
+
+.monthlyTable tr{
+    background-color: #ffffff;
+    font-weight: bold;
+    font-size: 22px;
+    transition: 0.3s ease-in-out;
+}
+
+.monthlyTable tr:hover {
+    background-color: rgb(250, 250, 89);
+    transform: scale(1.005);
+}
