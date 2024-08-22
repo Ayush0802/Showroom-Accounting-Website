@@ -17,7 +17,7 @@
     border: 1px solid #ddd;
     list-style-type: none;
     padding: 0;
-    width: 25%;
+    width: 350px;
     max-height: 125px;
     overflow-y: auto;
     scrollbar-width:none;
@@ -51,7 +51,7 @@
 }
 
 .searchInput {
-    width: 25%;
+    width: 350px;
     padding: 8px 20px;
     border-radius: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 1);
@@ -116,17 +116,15 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
-    max-width: 1700px;
+    height: 100%;
+    z-index: 999;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 125px;
-    height: 800px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     overflow-y: auto; 
-    max-height: 100vh; 
 }
 
 .modalContentC {

@@ -192,18 +192,6 @@ function Customers() {
     return (
         <>
             <Navbar />
-            <div className={styles.customerpage}>
-            <div className={styles.searchContainer}>
-                <input
-                    type="text"
-                    placeholder="Search by name, date, or bill no."
-                    value={searchTerm}
-                    onChange={handleSearchChange}
-                    className={styles.searchInput}
-                />
-                <button onClick={handleSearchClick} className={styles.searchButton}>Search</button>
-            </div>
-
             {error && (
                 <div className={styles.modalA}>
                     <div className={styles.modalContentA}>
@@ -231,59 +219,70 @@ function Customers() {
                     </div>
                 </div>
             )}
-
-            <div className={styles.customersContainer}>
-                {filteredCustomers.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt)).map((customer) => (
-                    <div key={customer._id} className={styles.customerBlock}>
-                        <div className={styles.customerSummary}>
-                            <div className={styles.customerB}>    
-                                <p>Bill No: {customer.billno}</p>
-                                <p className={styles.name}>Name: {customer.name}</p>
-                                <p className={styles.amtpaid}>Paid: {customer.amountPaidCash + customer.amountPaidBank}</p>
-                                <p className={styles.due}>Due: {customer.amountLeftToBePaid}</p>
-                            </div>
-                            <div className={styles.editdelete}>
-                                <button onClick={() => handleEditClick(customer)} className={styles.editButton}>Edit</button>
-                                <button onClick={() => openPopup(customer)} className={styles.deleteButton}>Delete</button>
-                            </div>
-                        </div>
-                        <div className={styles.customerDetails}>
-                            <p>Address: {customer.address}</p>
-                            <p>Contact: {customer.contact}</p>
-                            <p>Date: {new Date(customer.date).toLocaleDateString('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit' })}</p>
-                            <p>Total Amount: {customer.amountToBePaid}</p>
-                            <p>Discount: {customer.discount}</p>
-                            <p>Transport: {customer.transport}</p>
-                            <p>Final Amount: {customer.finalamount}</p>
-                            <p>Paid in Cash: {customer.amountPaidCash}</p>
-                            <p>Paid in Bank: {customer.amountPaidBank}</p>
-                            <p>Products:</p>
-                            <ul>
-                                {customer.products.map((product) => (
-                                    <li key={product._id}>
-                                        {product.name}:{product.company}:{product.catalog}:{product.code} - {product.quantity} @ {product.price} each (Total: {product.total})
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-                ))}
-            </div>
-
-            {isModalOpen && (
-                <div className={styles.modalB}>
-                    <div className={styles.modalContentB}>
-                        <CustomerForm customerData={editingCustomer} onSave={handleModalSave} onClose={handleModalClose} />
-                    </div>
+            <div className={styles.customerpage}>
+                <div className={styles.searchContainer}>
+                    <input
+                        type="text"
+                        placeholder="Search by name, date, or bill no."
+                        value={searchTerm}
+                        onChange={handleSearchChange}
+                        className={styles.searchInput}
+                    />
+                    <button onClick={handleSearchClick} className={styles.searchButton}>Search</button>
                 </div>
-            )}
-            
-            <footer className={styles.totals}>
-                <p className={styles.tamt}>Total Amount: {totals.amountToBePaid}</p>
-                <p className={styles.amtpaid}>Cash Payment: {totals.amountPaidCash}</p>
-                <p className={styles.amtpaid}>Bank Payment: {totals.amountPaidBank}</p>
-                <p className={styles.due}>Due: {totals.amountLeftToBePaid}</p>
-            </footer>
+
+                <div className={styles.customersContainer}>
+                    {filteredCustomers.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt)).map((customer) => (
+                        <div key={customer._id} className={styles.customerBlock}>
+                            <div className={styles.customerSummary}>
+                                <div className={styles.customerB}>    
+                                    <p>Bill No: {customer.billno}</p>
+                                    <p className={styles.name}>Name: {customer.name}</p>
+                                    <p className={styles.amtpaid}>Paid: {customer.amountPaidCash + customer.amountPaidBank}</p>
+                                    <p className={styles.due}>Due: {customer.amountLeftToBePaid}</p>
+                                </div>
+                                <div className={styles.editdelete}>
+                                    <button onClick={() => handleEditClick(customer)} className={styles.editButton}>Edit</button>
+                                    <button onClick={() => openPopup(customer)} className={styles.deleteButton}>Delete</button>
+                                </div>
+                            </div>
+                            <div className={styles.customerDetails}>
+                                <p>Address: {customer.address}</p>
+                                <p>Contact: {customer.contact}</p>
+                                <p>Date: {new Date(customer.date).toLocaleDateString('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit' })}</p>
+                                <p>Total Amount: {customer.amountToBePaid}</p>
+                                <p>Discount: {customer.discount}</p>
+                                <p>Transport: {customer.transport}</p>
+                                <p>Final Amount: {customer.finalamount}</p>
+                                <p>Paid in Cash: {customer.amountPaidCash}</p>
+                                <p>Paid in Bank: {customer.amountPaidBank}</p>
+                                <p>Products:</p>
+                                <ul>
+                                    {customer.products.map((product) => (
+                                        <li key={product._id}>
+                                            {product.name}:{product.company}:{product.catalog}:{product.code} - {product.quantity} @ {product.price} each (Total: {product.total})
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                {isModalOpen && (
+                    <div className={styles.modalB}>
+                        <div className={styles.modalContentB}>
+                            <CustomerForm customerData={editingCustomer} onSave={handleModalSave} onClose={handleModalClose} />
+                        </div>
+                    </div>
+                )}
+                
+                <footer className={styles.totals}>
+                    <p className={styles.tamt}>Total Amount: {totals.amountToBePaid}</p>
+                    <p className={styles.amtpaid}>Cash Payment: {totals.amountPaidCash}</p>
+                    <p className={styles.amtpaid}>Bank Payment: {totals.amountPaidBank}</p>
+                    <p className={styles.due}>Due: {totals.amountLeftToBePaid}</p>
+                </footer>
             </div>
 
             <Footbar/>
