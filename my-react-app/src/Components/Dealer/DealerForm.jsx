@@ -5,6 +5,8 @@ import { base_url } from '../../assets/help';
 const DealerForm = ({ dealerData, onSave, onClose }) => {
 
     const companynames = ['Advance', 'Delta']
+    const [searchTerm, setSearchTerm] = useState('');
+    const [suggestions, setSuggestions] = useState([]);
 
     const [dealer, setDealer] = useState({
         date: '',
@@ -61,6 +63,32 @@ const DealerForm = ({ dealerData, onSave, onClose }) => {
         fetchCompanies();
     }, []);
 
+    const handleSearchChange = (e) => {
+        const { name, value } = e.target;
+        setDealer({ ...dealer, [name]: value });
+        setSearchTerm(value);
+        
+        if (value.trim() === '') {
+            setSuggestions([]);
+        } else {
+            const filteredSuggestions = companies
+                .filter(companie => 
+                    companie.name.toLowerCase().includes(value.toLowerCase())
+                )
+                .map(companie => companie.name);
+            setSuggestions(filteredSuggestions);
+        }
+    };
+
+    const handleSuggestionClick = (suggestion) => {
+        setSearchTerm(suggestion);
+        setSuggestions([]);
+        // Optionally, you can trigger the search here
+        const filtered = companies.filter((companie) => 
+            companie.name.replace(/\s/g, '').toLowerCase() === suggestion.replace(/\s/g, '').toLowerCase()
+        );
+    };
+
     return (
         <>
             <form className={styles.form} onSubmit={handleSubmit}>
@@ -90,7 +118,7 @@ const DealerForm = ({ dealerData, onSave, onClose }) => {
                 </label>
                 <label>
                     Company :
-                    <select
+                    {/* <select
                         name="company"
                         value={dealer.company}
                         className={styles.inname}
@@ -100,7 +128,28 @@ const DealerForm = ({ dealerData, onSave, onClose }) => {
                         {(companies.sort((a,b) => a.name - b.name)).map((company) => (
                             <option key={company.name} value={company.name}>{company.name}</option>
                         ))}
-                    </select>
+                    </select> */}
+                    <input
+                        name="company"
+                        type="text"
+                        placeholder=""
+                        value={dealer.company = searchTerm}
+                        onChange={handleSearchChange}
+                        className={styles.searchInput}
+                    />
+                  
+                    {suggestions.length > 0 && (
+                        <ul className={styles.suggestions}>
+                            {suggestions.map((suggestion, index) => (
+                                <li 
+                                    key={index} 
+                                    onClick={() => handleSuggestionClick(suggestion)}
+                                >
+                                    {suggestion}
+                                </li>
+                            ))}
+                        </ul>
+                    )}
                 </label>
                 <label>
                     Cash Payment :

@@ -101,13 +101,58 @@ label {
     background-color: #f4f3f3;
 }
 
+.suggestions {
+    position:absolute;
+    border: 1px solid #ddd;
+    list-style-type: none;
+    padding: 0;
+    width: 250px;
+    max-height: 110px;
+    overflow-y: auto;
+    scrollbar-width:none;
+    background-color: white;
+    z-index: 999;
+    font-size: 15px;
+    border-radius: 10px;
+    font-weight: normal;
+    /* margin-top: 0.rem; */
+    margin-left: 10.7rem;
+    /* margin-left: -8.4rem; */
+}
+
+.searchInput {
+    width: 50%;
+    padding: 7px;
+    border: 1.5px solid #20201f;
+    margin-left: 1rem;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 15px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f3f3;
+    margin-left: 4.1rem;
+}
+
+.suggestions li {
+    padding: 7px;
+    cursor: pointer;
+}
+
+.suggestions li:hover {
+    background-color: #f1f1f1;
+}
+
+
 .incash{
     margin-left: 1.2rem;
 }
 
+
 .inname{
     margin-left: 4.1rem;
 }
+
+
 
 .inmonth{
     margin-left: 5.75rem;
