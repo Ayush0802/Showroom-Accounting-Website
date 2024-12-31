@@ -229,7 +229,7 @@
 }
 
 .addsub{
-    width: 20rem;
+    width: 25rem;
 }
 
 .addsection button{
@@ -245,7 +245,7 @@
 }
 
 .addsection button:hover{
-    background-color: rgb(252, 255, 57);
+    background-color: rgb(251, 255, 20);
 }
 
 .addsection button:active{
@@ -253,15 +253,56 @@
 }
 
 .entireadd{
-    margin-bottom: 6rem;
+    margin-bottom: 8rem;
     margin-top: 4rem;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     /* margin-left: 2rem; */
     border-radius: 10px;
-    width: 1450px;
+    width: 1000px;
     /* margin-top: 2rem; */
     box-shadow: 0 2px 20px rgba(0, 0, 0, 10);
+}
+
+.suggestions {
+    position:absolute;
+    border: 1px solid #ddd;
+    list-style-type: none;
+    padding: 0;
+    width: 160px;
+    max-height: 110px;
+    overflow-y: auto;
+    scrollbar-width:none;
+    background-color: white;
+    z-index: 999;
+    font-size: 15px;
+    border-radius: 10px;
+    font-weight: normal;
+    /* margin-top: 0.rem; */
+    /* margin-left: 10.7rem; */
+    /* margin-left: -8.4rem; */
+}
+
+.searchInput {
+    width: 50%;
+    padding: 7px;
+    border: 1.5px solid #20201f;
+    margin-left: 1rem;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 15px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f3f3;
+    margin-left: 4.1rem;
+}
+
+.suggestions li {
+    padding: 7px;
+    cursor: pointer;
+}
+
+.suggestions li:hover {
+    background-color: #f1f1f1;
 }

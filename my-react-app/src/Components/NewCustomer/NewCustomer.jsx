@@ -274,6 +274,64 @@ function NewCustomer() {
         });
     };
 
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const [suggestions, setSuggestions] = useState([]);
+
+    const handleSearchChange = (e) => {
+        const { name, value } = e.target;
+        setSearchTerm(value);
+        
+        if (value.trim() === '') {
+            setSuggestions([]);
+        } else {
+            const filteredSuggestions = companies
+                .filter(companie => 
+                    companie.name.toLowerCase().includes(value.toLowerCase())
+                )
+                .map(companie => companie.name);
+            setSuggestions(filteredSuggestions);
+        }
+    };
+
+    const handleSuggestionClick = (suggestion) => {
+        setSearchTerm(suggestion);
+        setSuggestions([]);
+        // Optionally, you can trigger the search here
+        const filtered = companies.filter((companie) => 
+            companie.name.replace(/\s/g, '').toLowerCase() === suggestion.replace(/\s/g, '').toLowerCase()
+        );
+    };
+
+    const [searchTerm2, setSearchTerm2] = useState('');
+
+    const [suggestions2, setSuggestions2] = useState([]);
+
+    const handleSearchChange2 = (e) => {
+        const { name, value } = e.target;
+        setSearchTerm2(value);
+        
+        if (value.trim() === '') {
+            setSuggestions2([]);
+        } else {
+            const filteredSuggestions = products
+                .filter(product => 
+                    product.name.toLowerCase().includes(value.toLowerCase())
+                )
+                .map(product => product.name);
+            setSuggestions2(filteredSuggestions);
+        }
+    };
+
+    const handleSuggestionClick2 = (suggestion) => {
+        setSearchTerm2(suggestion);
+        setSuggestions2([]);
+        // Optionally, you can trigger the search here
+        const filtered = products.filter((product) => 
+            product.name.replace(/\s/g, '').toLowerCase() === suggestion.replace(/\s/g, '').toLowerCase()
+        );
+    };
+
     return (
         <>
             <Navbar />
@@ -525,7 +583,28 @@ function NewCustomer() {
                             addProduct(newProduct);
                             e.target.reset();
                             }}>
-                            <input className={styles.addname} name="productName" placeholder="Product Name" />
+                            {/* <input className={styles.addname} name="productName" placeholder="Product Name" /> */}
+                            <input
+                                name="productName"
+                                type="text"
+                                placeholder="Product Name"
+                                value={searchTerm2}
+                                onChange={handleSearchChange2}
+                                className={styles.addname}
+                            />
+                        
+                            {suggestions2.length > 0 && (
+                                <ul className={styles.suggestions}>
+                                    {suggestions2.map((suggestion, index) => (
+                                        <li 
+                                            key={index} 
+                                            onClick={() => handleSuggestionClick2(suggestion)}
+                                        >
+                                            {suggestion}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
                             <input className={styles.addsub} name="productCompanies" placeholder="Companies (comma separated)" />
                             <button type="submit">Add Product</button>
                         </form>
@@ -541,8 +620,30 @@ function NewCustomer() {
                             };
                             addCompany(newCompany);
                             e.target.reset();
+                            setSearchTerm('');
                             }}>
-                            <input className={styles.addname} name="companyName" placeholder="Company Name" />
+                            {/* <input className={styles.addname} name="companyName" placeholder="Company Name" /> */}
+                            <input
+                                name="companyName"
+                                type="text"
+                                placeholder="Company Name"
+                                value={searchTerm}
+                                onChange={handleSearchChange}
+                                className={styles.addname}
+                            />
+                        
+                            {suggestions.length > 0 && (
+                                <ul className={styles.suggestions}>
+                                    {suggestions.map((suggestion, index) => (
+                                        <li 
+                                            key={index} 
+                                            onClick={() => handleSuggestionClick(suggestion)}
+                                        >
+                                            {suggestion}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
                             <input className={styles.addsub} name="companyCatalogs" placeholder="Catalogs (comma separated)" />
                             <button type="submit">Add Company</button>
                         </form>
